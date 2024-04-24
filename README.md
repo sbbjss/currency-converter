@@ -3,18 +3,21 @@
 ## Project Overview
 This project involves the creation of a simple full-stack application using NestJS for the backend and Nuxt for the frontend. The goal is to build a tool that retrieves and converts the amount of a specified transaction from one currency to a selected currency using a mock database. This task will demonstrate your ability to work with both frontend and backend technologies, apply RESTful principles, and implement clean, scalable code.
 
+You should approach this as if you were starting a new project that is expected to grow to support multiple developers working on it at once. Therefore, you are expected to take care to make thoughtful decisions about the project architecture.
+
 The frontend and backend base projects have been provided in the `nuxt` and `nest` directories of this repository to save time bootstrapping.
 
 ## Technical Requirements
 - **Backend**: Develop a RESTful API using NestJS with TypeScript. The API will serve transaction data from a provided JSON file simulating a database and perform currency conversions.
 - **Frontend**: Build a user interface using Nuxt 3 and the Vue Composition API with TypeScript. The interface will include a form to input a transaction ID and select a currency for conversion. The frontend should validate the transaction ID as a valid UUID before submission and handle user inputs and API responses effectively.
+- **Typescript**: Please do not use `any` or `unknown` types. Please do not edit the `tsconfig` files, and do not disable the linter.
 
 ## Backend Specifications
 1. **API Endpoints**:
    - `GET /transactions/{id}`: Returns the transaction details by ID.
    - `POST /transactions/{id}/convert`: Converts the transaction amount to the specified currency (currency should be passed as JSON in the body of the POST request) and returns the original and converted amounts.
 2. **Data Management**:
-   - Load and manage transaction data from the provided JSON file.
+   - Load and manage transaction data from the provided JSON file (at `nest/src/db/transactions-repository.ts`)
    - Ensure proper handling of non-existent transaction IDs and unsupported currencies with appropriate error messages.
    - Validation should be accomplished with a combination of NestJS pipes and the class-validation library
 3. **SOLID Principles**:
@@ -42,9 +45,13 @@ You may use any package from the @nestjs package family, for example `@nestjs/sw
 3. **User Interface**:
    - The designs provided are for desktop devices. The mobile designs have been intentionally left out to assess your flexibility with ambiguous designs. Your solution should be both mobile and desktop-friendly.
    - You may add additional components to the frontend design to improve the UX at your discretion (for example, toasts, loading animations, etc.)
+   - Consider, in the context of a new codebase, that form elements and API calls that you create may be required in other parts of the application later.
 
 ### Frontend Dependencies
 Tailwind has been added to the Nuxt configuration if you would like to leverage it. You may also use vanilla CSS, SCSS, or another css processor but please refrain from adding any other UI libraries or preconfigured stylesheets.
+
+
+You may utilize the `zod` and `vee-validate` libraries for form validation (they have not been added to the bootstrapped project by default)
 
 ## Project Delivery
 - Create a branch called `submission` on this repository, push your code to the `submission` branch, and when you are ready to submit your final application, create a pull request to `main` from your branch (do not merge)
