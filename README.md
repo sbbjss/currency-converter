@@ -19,7 +19,7 @@ The frontend and backend base projects have been provided in the `nuxt` and `nes
 2. **Data Management**:
    - Load and manage transaction data from the provided JSON file (at `nest/src/db/transactions-repository.ts`)
    - Ensure proper handling of non-existent transaction IDs and unsupported currencies with appropriate error messages.
-   - Validation should be accomplished with a combination of NestJS pipes and the class-validation library
+   - Validation should be accomplished with a combination of NestJS pipes and the class-validator library
 3. **SOLID Principles**:
    - Implement and demonstrate the use of Single Responsibility and Dependency Inversion principles in your code architecture.
 
