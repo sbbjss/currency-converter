@@ -33,6 +33,7 @@ const transactionRepository = new TransactionsRepository();
 
 const loadTransaction = async (transactionId: string): Promise<void> => {
   transaction.value = null;
+  apiError.value = null;
 
   try {
     transaction.value = await transactionRepository.getById(transactionId);
@@ -51,6 +52,7 @@ const convertTransaction = async ({
   currency: Currency;
 }): Promise<void> => {
   convertedAmount.value = null;
+  apiError.value = null;
 
   try {
     const result = await transactionRepository.convertTransaction(
