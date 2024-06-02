@@ -7,12 +7,13 @@
         v-model="transactionId"
         placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
         :error="showErrors ? errors.transactionId : ''"
+        :disabled="showTransactionDetails"
       />
       <div class="flex justify-center mt-12">
         <UiButton v-if="showTransactionDetails" @click="reset">
           Reset
         </UiButton>
-        <UiButton v-else @click="validateAndLoad" class="mt-4">
+        <UiButton v-else @click="validateAndLoad">
           Load transaction
         </UiButton>
       </div>
@@ -63,13 +64,13 @@
             Convert
           </UiButton>
         </div>
-        <p v-if="apiError" class="text-red-500 text-sm text-center">
-          {{ apiError }}
-        </p>
         <p v-if="errors.currency" class="text-red-500 text-sm text-center">
           {{ errors.currency }}
         </p>
       </div>
+      <p v-if="apiError" class="text-red-500 text-sm text-center">
+        {{ apiError }}
+      </p>
     </form>
   </div>
 </template>

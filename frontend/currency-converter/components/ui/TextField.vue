@@ -6,6 +6,7 @@
       type="text"
       :placeholder="placeholder"
       :value="modelValue"
+      :disabled="disabled"
       class="mt-1 px-2 h-8 block w-full border border-pagos-blue focus:outline-none rounded-md shadow-sm"
       @input="updateValue($event?.target?.value)"
     />
@@ -36,6 +37,10 @@ defineProps<{
   placeholder: {
     type: String;
     default: "";
+  };
+  disabled: {
+    type: Boolean;
+    default: false;
   };
 }>();
 
