@@ -11,3 +11,6 @@ make start
 ```
 Alternatively, you can manually run the backend and frontend by using relevant commands specified in respective package.json files.
 For manual boot, remember to install dependencies for each application by running `npm install` in `backend/services/transactions` and `frontend/currency-converter`.
+
+## Environment Variables
+It is expected to run backend with one's own Freecurrency API key. Make sure to `cp .env.example .env` and replace the placeholder with your own key.
