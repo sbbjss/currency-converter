@@ -17,7 +17,7 @@ The frontend and backend base projects have been provided in the `nuxt` and `nes
    - `GET /transactions/{id}`: Returns the transaction details by ID.
    - `POST /transactions/{id}/convert`: Converts the transaction amount to the specified currency (currency should be passed as JSON in the body of the POST request) and returns the original and converted amounts.
 2. **Data Management**:
-   - Load and manage transaction data from the provided JSON file (at `nest/src/db/transactions-repository.ts`)
+   - Load and manage transaction data from the provided JSON file (at `nest/src/db/transactions-db.ts`)
    - Ensure proper handling of non-existent transaction IDs and unsupported currencies with appropriate error messages.
    - Validation should be accomplished with a combination of NestJS pipes and the class-validator library
 3. **SOLID Principles**:
